@@ -1,0 +1,59 @@
+{
+  "task_name": "bmv_renewal",
+  "starting_url": "https://www.bmv.ohio.gov/",
+  "goal": "Help the user begin Ohio driver license renewal on the official site.",
+  "profile_fields": {
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "date_of_birth": "01/15/1952",
+    "street": "123 Main St",
+    "city": "Cleveland",
+    "state": "OH",
+    "zip": "44106",
+    "license_type": "driver_license",
+    "renewal_type": "online_renewal"
+  },
+  "field_aliases": {
+    "first_name": ["first name", "given name", "fname"],
+    "last_name": ["last name", "surname", "lname"],
+    "date_of_birth": ["dob", "date of birth", "birth date"],
+    "street": ["street", "address line 1", "address"],
+    "city": ["city", "town"],
+    "state": ["state"],
+    "zip": ["zip", "zipcode", "postal code"],
+    "license_type": ["license type", "credential type"],
+    "renewal_type": ["renewal type", "service type"]
+  },
+  "allowed_fields": [
+    "first_name",
+    "last_name",
+    "date_of_birth",
+    "street",
+    "city",
+    "state",
+    "zip",
+    "license_type",
+    "renewal_type"
+  ],
+  "blocked_fields": [
+    "ssn",
+    "payment_info",
+    "otp",
+    "captcha"
+  ],
+  "handoff_rules": [
+    "login",
+    "captcha",
+    "otp",
+    "legal_confirmation",
+    "payment",
+    "final_submit"
+  ],
+  "completion_rules": [
+    "Reach the real renewal page or renewal form",
+    "Identify relevant fields correctly",
+    "Fill at least one approved non-sensitive field",
+    "Stop before final submission",
+    "Keep the browser on for further access"
+  ]
+}

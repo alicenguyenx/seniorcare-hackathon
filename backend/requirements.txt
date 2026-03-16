@@ -3,3 +3,7 @@ uvicorn
 boto3
 python-dotenv
 pydantic
+nova-act
+opensearch-py
+requests
+beautifulsoup4
