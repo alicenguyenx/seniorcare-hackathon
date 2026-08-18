@@ -1,9 +1,14 @@
-import psycopg2
+import os
 
-db_host = 'database-1.c1seomkuoece.us-east-2.rds.amazonaws.com'
-db_name = 'test_name'
-db_user = 'postgres'
-db_pass = 'F3IHPw8H0OOKe7r3Pz39'
+import psycopg2
+from dotenv import load_dotenv
+
+load_dotenv()
+
+db_host = os.environ["DB_HOST"]
+db_name = os.environ["DB_NAME"]
+db_user = os.environ["DB_USER"]
+db_pass = os.environ["DB_PASSWORD"]
 
 connect = psycopg2.connect(host=db_host, database=db_name, user=db_user, password=db_pass)
 print("Connected to the database")
